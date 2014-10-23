@@ -15,5 +15,7 @@ The website is based around the gradient, one full page of different gradients t
 + Moving icons based on the weather.
 + Be able to change the time.
 
-[Inspiration] (http://uigradients.com/)
+### Inspiration
+
+[Gradients] (http://uigradients.com/)
 
