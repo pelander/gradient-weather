@@ -1,4 +1,4 @@
-// Credit goes to Varun Vachhar (varunvachhar@gmail.com) for the gradient tween.
+// Credit goes to Varun Vachhar (varunvachhar@gmail.com) for the motion tween.
 
 var s = 120;
 var tri;
