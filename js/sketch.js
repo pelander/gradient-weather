@@ -1,17 +1,10 @@
 // Credit goes to Varun Vachhar (varunvachhar@gmail.com) for the motion tween.
 
 var s = 120;
-var tri;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   fill(255, 25);
-
-  tri = [
-    [0, -s / sqrt(3)],
-    [-s / 2, s * 0.5 / sqrt(3)],
-    [s / 2, s * 0.5 / sqrt(3)]
-  ];
 
   newTween();
 }
