@@ -3,6 +3,7 @@ gradient-weather
 An interactive weather website tell’s you the basic weather information and changes gradients based on that.
 
 _Created by Pelle Wisten & Sam Ojling_
+
 [WNM498 Generative Art Fall 14] (https://github.com/rybotron/wnm498genart_f14)
 
 ### Story
@@ -14,4 +15,5 @@ The website is based around the gradient, one full page of different gradients t
 + Moving icons based on the weather.
 + Be able to change the time.
 
+[Inspiration] (http://uigradients.com/)
 
