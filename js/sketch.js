@@ -1,3 +1,5 @@
+// Credit goes to Varun Vachhar (varunvachhar@gmail.com) for the gradient tween.
+
 var s = 120;
 var tri;
 
