@@ -5,7 +5,7 @@ function setup() {
   fill(255, 25);
 
   // Request the data from openweathermap
-  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=New%20York,NY&units=imperial', gotWeather);
+  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco,CA&units=imperial', gotWeather);
 
   newTween();
 }
