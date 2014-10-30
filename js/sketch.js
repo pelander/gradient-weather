@@ -63,21 +63,20 @@ function hexToRgb(hex) {
 }
 
 function gotWeather(weather) {
-<<<<<<< Updated upstream
-=======
   
->>>>>>> Stashed changes
   // Get the wind speed
   var windmag = Number(weather.wind.speed);
   var winddesc = floor(weather.main.description);
   
   // Display as HTML elements
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;').addClass('temprature');
   var windDiv = createDiv("WIND " + windmag + " <small>MPH</small>").addClass('wind');
 =======
+=======
+>>>>>>> FETCH_HEAD
   var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;');
   var windDiv = createDiv("WIND " + windmag + " <small>MPH</small>");
   var descriptionDiv = createDiv("Weather " + winddesc + " <small>Hej</small>");
->>>>>>> Stashed changes
 }
