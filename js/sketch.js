@@ -68,13 +68,7 @@ function gotWeather(weather) {
   var windmag = Number(weather.wind.speed);
   
   // Display as HTML elements
-<<<<<<< HEAD
-<<<<<<< Updated upstream
   var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;').addClass('temprature');
   var windDiv = createDiv("WIND " + windmag + " <small>MPH</small>").addClass('wind');
-=======
-=======
->>>>>>> FETCH_HEAD
-  var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;');
-  var windDiv = createDiv("WIND " + windmag + " <small>MPH</small>");
+
 }
