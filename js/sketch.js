@@ -4,6 +4,9 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   fill(255, 25);
 
+  // Request the data from openweathermap
+  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=New%20York,NY&units=imperial', gotWeather);
+
   newTween();
 }
 
@@ -57,4 +60,19 @@ function hexToRgb(hex) {
       g: parseInt(result[2], 16),
       b: parseInt(result[3], 16)
   } : null;
+}
+
+function gotWeather(weather) {
+  
+  // Get the angle (convert to radians)
+  var angle = radians(Number(weather.wind.deg));
+  // Get the wind speed
+  var windmag = Number(weather.wind.speed);
+  
+  // Display as HTML elements
+  var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;');
+  var windDiv = createDiv("WIND " + windmag + " <small>MPH</small>");
+  
+  // Make a vector
+  wind = p5.Vector.fromAngle(angle);
 }
