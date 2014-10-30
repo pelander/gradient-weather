@@ -6,3 +6,11 @@ body {
 	height: 100%;
 	overflow: hidden;
 }
+
+div {
+	position:relative;
+}
+
+canvas {
+	position:absolute;
+}
