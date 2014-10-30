@@ -19,3 +19,22 @@ The website is based around the gradient, one full page of different gradients t
 
 [Gradients] (http://uigradients.com/)
 
+### Color Palletes
++ Partly Cloudy Gradient ( #DAE2F8 - #D6A4A4 )
++ Sunny Gradient ( #FF4E50 - #F9D423 )
++ Cloudy Gradient ( #ECE9E6 - #FFFFFF )
++ Snowing Gradient ( #E6DADA - #274046 )
++ Rain Gradient ( #616161 - #9BC5C3 )
++ Fog Gradient ( #757F9A - #D7DDE8 )
+
+### Animations 
++ Tween for the weather gradients. 
++ Gui to change time of the day.
++ Animated icon after weather.
++ Digital current time.
+
+### Interaction
++ Mouse click slider to change time of the day.
+
+
+
