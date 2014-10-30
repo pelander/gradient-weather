@@ -1,32 +1,32 @@
 var gradients = [
   {
     "name":"Partly Cloudy",
-    "colour1":"#348F50",
-    "colour2":"#56B4D3"
+    "colour1":"#DAE2F8",
+    "colour2":"#D6A4A4"
   },
   {
     "name":"Sunny",
-    "colour1":"#3CA55C",
-    "colour2":"#B5AC49"
+    "colour1":"#FF4E50",
+    "colour2":"#F9D423"
   },
   {
     "name":"Cloudy",
-    "colour1":"#003973",
-    "colour2":"#E5E5BE"
+    "colour1":"#ECE9E6",
+    "colour2":"#FFFFFF"
   },
   {
     "name":"Snowing",
-    "colour1":"#E55D87",
-    "colour2":"#5FC3E4"
+    "colour1":"#E6DADA",
+    "colour2":"#274046"
   },
   {
     "name":"Rain",
-    "colour1":"#403B4A",
-    "colour2":"#E7E9BB"
+    "colour1":"#616161",
+    "colour2":"#9BC5C3"
   },
   {
     "name":"Fog",
-    "colour1":"#F09819",
-    "colour2":"#EDDE5D"
+    "colour1":"#757F9A",
+    "colour2":"#D7DDE8"
   }
 ];
