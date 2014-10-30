@@ -1,7 +1,5 @@
 // Credit goes to Varun Vachhar (varunvachhar@gmail.com) for the motion tween.
 
-var s = 120;
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   fill(255, 25);
