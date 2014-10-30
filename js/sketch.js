@@ -63,16 +63,10 @@ function hexToRgb(hex) {
 }
 
 function gotWeather(weather) {
-  
-  // Get the angle (convert to radians)
-  var angle = radians(Number(weather.wind.deg));
   // Get the wind speed
   var windmag = Number(weather.wind.speed);
   
   // Display as HTML elements
-  var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;');
-  var windDiv = createDiv("WIND " + windmag + " <small>MPH</small>");
-  
-  // Make a vector
-  wind = p5.Vector.fromAngle(angle);
+  var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;').addClass('text1');
+  var windDiv = createDiv("WIND " + windmag + " <small>MPH</small>").addClass('text2');
 }
