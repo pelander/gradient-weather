@@ -14,3 +14,18 @@ div {
 canvas {
 	position:absolute;
 }
+
+.temperature {
+	margin-top: 40%;
+	margin-left: 80%;
+	font-size: 110px;
+	color: white;
+	font-family: helvetica;
+}
+.wind {
+	font-size: 20;
+	font-weight: bold;
+	color: white;
+	margin-left: 80%;
+	font-family: helvetica;
+}
