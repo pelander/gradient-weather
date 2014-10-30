@@ -68,6 +68,6 @@ function gotWeather(weather) {
   var windmag = Number(weather.wind.speed);
   
   // Display as HTML elements
-  var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;').addClass('temprature');
+  var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;').addClass('temperature');
   var windDiv = createDiv("WIND " + windmag + " <small>MPH</small>").addClass('wind');
 }
