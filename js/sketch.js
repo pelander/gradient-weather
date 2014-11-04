@@ -1,65 +1,39 @@
-// Credit goes to Varun Vachhar (varunvachhar@gmail.com) for the motion tween.
+var Y_AXIS = 1;
+var ba1, ba2;
+var weather;
+var loaded;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  fill(255, 25);
+
+  ba1 = color(221,214,243);
+  ba2 = color(250,172,168);
 
   // Request the data from openweathermap
-  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco,CA&units=imperial', gotWeather);
-
-  newTween();
+   loadJSON('http://api.openweathermap.org/data/2.5/weather?q=SanFrancisco,US', function(w){
+        loaded = true;
+        weather = w.weather;
+        print(weather);
+    });
 }
+
 
 
 function draw() {
-  background(255);
+  setGradient(0, 0, width/2, height, ba1, ba2, 1);
 
-  for (var i = 0; i <= width; i++) {
-    var j = map(i, 0, width, 0, 1);
-    var c = lerpColor(c1, c2, j);
-    stroke(c);
-    line(i, 0, i, height);
-  }
 }
 
+function setGradient(x, y, w, h, c1, c2, axis) {
 
-function newTween() {
-  var gradStart = randomGradient();
-    c1 = gradStart[0];
-    c2 = gradStart[1];
+  noFill();
 
-  t = new MOTION.Tween(30)
-            .add(this, 'c1', gradStart[0])
-            .add(this, 'c2', gradStart[1])
-            .easing(Sine.InOut)
-            .relative()
-            .play()
-            .onEnd(function() {
-              var gradEnd = randomGradient();
-              t.get('c1').setEnd(gradEnd[0]);
-              t.get('c2').setEnd(gradEnd[1]);
-              t.play();
-            });
-}
-
-
-function randomGradient() {
-  var gradient = gradients[Math.floor( Math.random() * gradients.length )];
-
-  var _c1 = hexToRgb(gradient.colour1);
-  var _c2 = hexToRgb(gradient.colour2);
-
-  return [color(_c1.r, _c1.g, _c1.b), color(_c2.r, _c2.g, _c2.b)];
-}
-
-
-function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-  } : null;
+  for (var i = y; i <= y+h; i++) {
+      var inter = map(i, y, y+h, 0, 1);
+      var c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(x, i, x+w, i);
+    }
 }
 
 function gotWeather(weather) {
