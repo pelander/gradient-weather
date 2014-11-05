@@ -2,6 +2,7 @@ var Y_AXIS = 1;
 var ba1, ba2;
 var weather;
 var loaded;
+var main;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -10,10 +11,15 @@ function setup() {
   ba2 = color(250,172,168);
 
   // Request the data from openweathermap
-   loadJSON('http://api.openweathermap.org/data/2.5/weather?q=SanFrancisco,US', function(w){
+  // loadJSON('http://api.openweathermap.org/data/2.5/weather?q=SanFrancisco,US', gotWeather);
+  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco,CA&units=imperial', function(w){
         loaded = true;
         weather = w.weather;
+        main = w.main;
+        createDiv( floor(main.temp) + '&deg;').addClass('temperature');
+        createDiv( text(weather.description) + '&deg;').addClass('wind');
         print(weather);
+        print(main);
     });
 }
 
@@ -36,12 +42,8 @@ function setGradient(x, y, w, h, c1, c2, axis) {
     }
 }
 
-function gotWeather(weather) {
-  
-  // Get the wind speed
-  var windmag = Number(weather.wind.speed);
+function w(weather) {
+
   
   // Display as HTML elements
-  var temperatureDiv = createDiv(floor(weather.main.temp) + '&deg;').addClass('temperature');
-  var windDiv = createDiv("WIND " + windmag + " <small>MPH</small>").addClass('wind');
 }
