@@ -1,12 +1,59 @@
 var Y_AXIS = 1;
-var PartlyCloudy1, PartlyCloudy2, Sunny1, Sunny2, Cloudy1, Cloudy2, Snowing1, Snowing2, Rain1, Rain2, Fog1, Fog2;
+var PartlyCloudy1, PartlyCloudy2, Sunny1, Sunny2, Cloudy1, Cloudy2, Snowing1, Snowing2, Rain1, Rain2, Fog1, Fog2, Moreclouds1, Moreclouds2;
 var weather;
 var loaded;
 var main;
 var name;
+var list;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
+
+    if(geoPosition.init()){  // Geolocation Initialisation
+            geoPosition.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true});
+    }else{
+            // You cannot use Geolocation in this device
+    }
+    geoPositionSimulator.init(); 
+
+    // p : geolocation object
+    function success_callback(p){
+        // p.latitude : latitude value
+        // p.longitude : longitude value
+        var address = "http://api.openweathermap.org/data/2.5/find?lat=" + p.coords.latitude + "&lon=" + p.coords.longitude + "&cnt=1&units=imperial";
+        loadJSON( address, function(data){
+            var w = data.list[0];
+            loaded = true;
+            weather = w.weather;
+            main = w.main;
+            name = w.name;
+            createDiv( floor(main.temp) + '&deg;').addClass('temperature');
+            createDiv( weather[0].description).addClass('wind');
+            createDiv( name).addClass('wind');
+            print(weather);
+            print(main);
+            print(name);
+            print(weather[0].id)
+        });
+    }
+
+    function error_callback(p){
+        // p.message : error message
+        loadJSON('http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco,CA&units=imperial', function(w){
+            loaded = true;
+            weather = w.weather;
+            main = w.main;
+            name = w.name;
+            createDiv( floor(main.temp) + '&deg;').addClass('temperature');
+            createDiv( weather[0].description).addClass('weather');
+            createDiv( name).addClass('city');
+            print(weather);
+            print(main);
+            print(name);
+            print(weather[0].id)
+        });
+    }
 
   PartlyCloudy1 = color(218,226,248);
   PartlyCloudy2 = color(214,164,164);
@@ -32,8 +79,8 @@ function setup() {
   Thunder1 = color(35,37,38);
   Thunder2 = color(65,67,69);
 
-  Moreclouds1 = color(131,164,212);
-  Moreclouds2 = color(182,251,255);
+  Moreclouds1 = color(117,127,154);
+  Moreclouds2 = color(215,221,232);
 
 
 
@@ -42,19 +89,19 @@ function setup() {
   Fewclouds2 = color();     
 
   // Request the data from openweathermap
-  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco,CA&units=imperial', function(w){
-        loaded = true;
-        weather = w.weather;
-        main = w.main;
-        name = w.name;
-        createDiv( floor(main.temp) + '&deg;').addClass('temperature');
-        createDiv( weather[0].description).addClass('weather');
-        createDiv( name).addClass('city');
-        print(weather);
-        print(main);
-        print(name);
-        print(weather[0].id)
-    });
+  // loadJSON('http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco,CA&units=imperial', function(w){
+  //       loaded = true;
+  //       weather = w.weather;
+  //       main = w.main;
+  //       name = w.name;
+  //       createDiv( floor(main.temp) + '&deg;').addClass('temperature');
+  //       createDiv( weather[0].description).addClass('wind');
+  //       createDiv( name).addClass('wind');
+  //       print(weather);
+  //       print(main);
+  //       print(name);
+  //       print(weather[0].id)
+  //   });
 }
 
 function draw() {
@@ -83,6 +130,8 @@ function setGradient(x, y, w, h, c1, c2, axis) {
       line(x, i, x+w, i);
     }
 }
+
+
 
 
 // if (weather[0].id >= 200 && weather[0].id <= 232) {
