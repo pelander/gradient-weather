@@ -29,8 +29,8 @@ function setup() {
             main = w.main;
             name = w.name;
             createDiv( floor(main.temp) + '&deg;').addClass('temperature');
-            createDiv( weather[0].description).addClass('wind');
-            createDiv( name).addClass('wind');
+            createDiv( weather[0].description).addClass('weather');
+            createDiv( name).addClass('city');
             print(weather);
             print(main);
             print(name);
