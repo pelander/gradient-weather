@@ -48,8 +48,13 @@ function setup() {
         main = w.main;
         name = w.name;
         createDiv( floor(main.temp) + '&deg;').addClass('temperature');
+<<<<<<< Updated upstream
         createDiv( weather[0].description).addClass('wind');
         createDiv( name).addClass('wind');
+=======
+        createDiv( weather[0].main).addClass('weather');
+        createDiv( name).addClass('city');
+>>>>>>> Stashed changes
         print(weather);
         print(main);
         print(name);
