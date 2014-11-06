@@ -32,8 +32,8 @@ function setup() {
   Thunder1 = color(35,37,38);
   Thunder2 = color(65,67,69);
 
-  Moreclouds1 = color(117,127,154);
-  Moreclouds2 = color(215,221,232);
+  Moreclouds1 = color(131,164,212);
+  Moreclouds2 = color(182,251,255);
 
 
 
@@ -48,13 +48,8 @@ function setup() {
         main = w.main;
         name = w.name;
         createDiv( floor(main.temp) + '&deg;').addClass('temperature');
-<<<<<<< Updated upstream
-        createDiv( weather[0].description).addClass('wind');
-        createDiv( name).addClass('wind');
-=======
-        createDiv( weather[0].main).addClass('weather');
+        createDiv( weather[0].description).addClass('weather');
         createDiv( name).addClass('city');
->>>>>>> Stashed changes
         print(weather);
         print(main);
         print(name);
